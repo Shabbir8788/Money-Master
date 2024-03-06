@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Master</title>
+    <!-- daisyUi & tailwind cdn link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="mt-4">
+      <h1 class="text-5xl text-center font-bold text-[#31A5AC]">
+        Money Master💰
+      </h1>
+    </header>
+
+    <main>
+      <section class="mt-6 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- money pic part -->
+          <div>
+            <img src="images/banner.png" alt="" class="rounded-xl" />
+          </div>
+
+          <!-- calculation part -->
+          <!-- Income -->
+          <div class="bg-slate-100 rounded-xl">
+            <div class="mt-2 space-y-1">
+              <h3 class="text-xl font-medium text-center">Income</h3>
+              <form class="text-center mt-2">
+                <label for="income" class="font-medium">Income: </label>
+                <input
+                  type="number"
+                  id="income-field"
+                  class="bg-slate-300 px-3 py-1"
+                />
+              </form>
+            </div>
+
+            <!-- Expense -->
+            <div class="mt-2 space-y-2">
+              <h3 class="text-xl font-medium text-center">Expenses</h3>
+              <form class="text-center mt-2">
+                <label for="income" class="ml-6 font-medium">Food: </label>
+                <input
+                  type="number"
+                  id="food-field"
+                  class="bg-slate-300 px-3 py-1"
+                />
+              </form>
+
+              <form class="text-center mt-2">
+                <label for="income" class="ml-6 font-medium">Rent: </label>
+                <input
+                  type="number"
+                  id="rent-field"
+                  class="bg-slate-300 px-3 py-1"
+                />
+              </form>
+
+              <form class="text-center mt-2">
+                <label for="income" class="font-medium">Clothes: </label>
+                <input
+                  type="number"
+                  id="clothes-field"
+                  class="bg-slate-300 px-3 py-1"
+                />
+              </form>
+              <div class="text-center mt-3 ml-8">
+                <button
+                  id="btn-calculate"
+                  class="btn bg-[#31A5AC] px-14 font-bold text-white hover:bg-blue-700"
+                  onclick="calculateValue()"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+
+            <!-- saving part -->
+            <div class="mt-4 space-y-3">
+              <h3 class="text-xl font-medium text-center">
+                Total Expenses: <span id="total-expense">00</span>
+              </h3>
+
+              <h3 class="text-xl font-medium text-center">
+                Balance: <span id="total-balance">00</span>
+              </h3>
+
+              <p class="flex gap-5 px-10 items-center">
+                Save:
+                <input
+                  type="number"
+                  id="save-field"
+                  class="w-24 bg-slate-200 px-3"
+                />
+                %
+                <button
+                  class="btn btn-sm bg-[#31A5AC] px-14 font-bold text-white hover:bg-blue-700"
+                  onclick="saveAmount()"
+                >
+                  Save
+                </button>
+              </p>
+
+              <h3 class="text-xl font-medium text-center">
+                Saving Amount: <span id="saving-amount">00</span>
+              </h3>
+
+              <h3 class="text-xl font-medium text-center">
+                Remaining Balance: <span id="remaining-balance">00</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/money.js"></script>
+  </body>
+</html>
