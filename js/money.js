@@ -36,7 +36,9 @@ function calculateValue() {
 
 function saveAmount() {
   const totalExpenses = getTextElementValueById("total-expense");
-  const discountPrice = calculateDiscount(totalExpenses, 20);
+  const discount = calculateDiscount(totalExpenses, 20);
+
+  const discountPrice = totalExpenses - discount;
   setElementInnerText("saving-amount", discountPrice);
 
   const remainingBalance = totalExpenses - discountPrice;
